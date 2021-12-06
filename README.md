@@ -5,10 +5,9 @@ source/idea: https://youtu.be/tBoLDpTWVOM
 ## create (when setting up)
 
 ```
-su -
-git init --bare ~/dotfiles.git
+git init --bare $HOME/dotfiles.git
 # replace '--work-tree=/' with '--work-tree=\$HOME' when you only want to add files from your home dir
-Write-Output "function git-dotfiles { git --git-dir=`$HOME/dotfiles.git/ --work-tree=/ `$args }" >> ~/Documents/PowerShell/profile.ps1
+Write-Output "function git-dotfiles { git --git-dir=`$HOME/dotfiles.git/ --work-tree=/ `$args }" >> $HOME/Documents/PowerShell/profile.ps1
 pwsh
 git-dotfiles config --local status.showUntrackedFiles no
 git-dotfiles remote add origin git@github.com:Masterflitzer/dotfiles.git
@@ -17,9 +16,8 @@ git-dotfiles remote add origin git@github.com:Masterflitzer/dotfiles.git
 ## clone
 
 ```
-su -
-git clone --bare git@github.com:Masterflitzer/dotfiles.git ~/dotfiles.git
-Write-Output "function git-dotfiles { git --git-dir=`$HOME/dotfiles.git/ --work-tree=/ `$args }" >> ~/Documents/PowerShell/profile.ps1
+git clone --bare git@github.com:Masterflitzer/dotfiles.git $HOME/dotfiles.git
+Write-Output "function git-dotfiles { git --git-dir=`$HOME/dotfiles.git/ --work-tree=/ `$args }" >> $HOME/Documents/PowerShell/profile.ps1
 pwsh
 git-dotfiles config --local status.showUntrackedFiles no
 git-dotfiles restore --staged /
