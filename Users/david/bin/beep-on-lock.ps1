@@ -2,9 +2,8 @@
 param ([switch]$beep)
 
 function IsSuspended {
-    $process = Get-Process lockapp
-    $threads = $process.Threads
-    $thread = $threads[0]
+    $process = Get-Process -Name LockApp
+    $thread = $process.Threads[0]
     return ($thread.ThreadState -eq "wait") -and ($thread.WaitReason -eq "suspended")
 }
 
