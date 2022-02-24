@@ -11,6 +11,7 @@ Write-Output "function git-dotfiles { git --git-dir=`$HOME/dotfiles.git/ --work-
 pwsh
 git-dotfiles config --local status.showUntrackedFiles no
 git-dotfiles remote add origin git@github.com:masterflitzer/dotfiles.git
+git-dotfiles fetch
 git-dotfiles branch -u origin/main main
 ```
 
